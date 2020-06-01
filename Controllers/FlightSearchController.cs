@@ -29,9 +29,9 @@ namespace FlightServiceConsumeApplication.Controllers
         {
             try
             {
-                // TODO: Add insert logic here
+                //This api is configured from appsettings.json
 
-                var client = new RestClient("https://trinetiumtest.azurewebsites.net/api/Flights");
+                var client = new RestClient(APIConstatnt.Api);
                 var request = new RestRequest(Method.POST);
                 request.RequestFormat = DataFormat.Json;
                 _ = request.AddBody(new FlightSegmentDto
@@ -55,7 +55,6 @@ namespace FlightServiceConsumeApplication.Controllers
                             {
                                 ListOfFlightSegment.AddRange(items);
                             }
-                            //
                         }
                     }
                 }
