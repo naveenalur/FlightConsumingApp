@@ -1,0 +1,139 @@
+﻿@model IEnumerable<FlightServiceConsumeApplication.Models.FlightSegment>
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div>
+
+    <h1>Flight OnWord</h1>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>
+                    Origin
+                </th>
+                <th>
+                    Destination
+                </th>
+                <th>
+                    OnWard Date
+                </th>
+                <th>
+                    Return Date
+                </th>
+                <th>
+                    Air Line
+                </th>
+                <th>
+                    Flight Number
+                </th>
+                <th>
+                    Flight Type
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                if (item.FlightType.Equals("Onward"))
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Origin)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Destination)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OnwardDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ReturnDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Airline)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FlightNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FlightType)
+                        </td>
+
+                    </tr>
+                }
+
+            }
+        </tbody>
+    </table>
+</div>
+<div>
+
+    <h1>Flight Return</h1>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>
+                    Origin
+                </th>
+                <th>
+                    Destination
+                </th>
+                <th>
+                    OnWard Date
+                </th>
+                <th>
+                    Return Date
+                </th>
+                <th>
+                    Air Line
+                </th>
+                <th>
+                    Flight Number
+                </th>
+                <th>
+                    Flight Type
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                if (item.FlightType.Equals("Return"))
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Origin)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Destination)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OnwardDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ReturnDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Airline)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FlightNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FlightType)
+                        </td>
+
+                    </tr>
+                }
+
+            }
+        </tbody>
+    </table>
+</div>
+
